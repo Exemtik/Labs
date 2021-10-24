@@ -19,12 +19,14 @@ namespace Lab1_2
             int mxx = 0;
             int[] vvod2 = null;
             int[,] matr2 = null;
-            int[] vvod1 = Array.ConvertAll(Console.ReadLine().Split(" "), z => int.Parse(z));
-            int[,] matr = new int[vvod1[0], vvod1[1]];
+            int[] vvod1 = null;
+            int[,] matr = null;
             string a = Console.ReadLine();
             switch (a)
             {
                 case "kb":
+                    vvod1 = Array.ConvertAll(Console.ReadLine().Split(" "), z => int.Parse(z));
+                    matr = new int[vvod1[0], vvod1[1]];
                     for (int x = 0; x < matr.GetLength(0); x++)
                     {
                         int[] mass1 = Array.ConvertAll(Console.ReadLine().Split(" "), z => int.Parse(z));
@@ -77,6 +79,8 @@ namespace Lab1_2
                     break;
                 case "fl":
                     StreamReader sr = new StreamReader("Lab2.txt");
+                    vvod1 = Array.ConvertAll(sr.ReadLine().Split(" "), z => int.Parse(z));
+                    matr = new int[vvod1[0], vvod1[1]];
                     for (int x = 0; x < matr.GetLength(0); x++)
                     {
                         int[] mass1 = Array.ConvertAll(sr.ReadLine().Split(" "), z => int.Parse(z));
